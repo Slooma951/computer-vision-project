@@ -19,8 +19,8 @@ img_width = 128
 img_height = 128
 img_channels = 3
 fit = True #make fit false if you do not want to train the network again
-train_dir = 'C:\\Users\\SimonMcLoughlin\\Documents\\research\\datasets\\chest_xray\\train'
-test_dir = 'C:\\Users\\SimonMcLoughlin\\Documents\\research\\datasets\\chest_xray\\test'
+train_dir = '../data/train'
+test_dir = '../data/test'
 
 with tf.device('/gpu:0'):
     
