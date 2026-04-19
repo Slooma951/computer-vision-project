@@ -119,11 +119,13 @@ with tf.device('/gpu:0'):
     plt.show()
 
     # Classification report (precision, recall, F1-score)
-    predictions = model.predict(test_ds)
-    y_pred = np.argmax(predictions, axis=1)
     y_true = []
+    y_pred = []
+
     for images, labels in test_ds:
+        preds = model.predict(images)
         y_true.extend(labels.numpy())
+        y_pred.extend(np.argmax(preds, axis=1))
 
     print("\nClassification Report:")
     print(classification_report(y_true, y_pred, target_names=class_names))
